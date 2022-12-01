@@ -14,17 +14,18 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	@Query("""
 			SELECT p
 			FROM Product p
-			WHERE (UPPER(TYPE) LIKE '%' || UPPER(?1) || '%'
+			WHERE (UPPER(TITLE) LIKE '%' || UPPER(?1) || '%'
 			       OR UPPER(description) LIKE '%' || UPPER(?1) || '%'
 			       OR UPPER(author) LIKE '%' || UPPER(?1) || '%'
 			       OR UPPER(category) LIKE '%' || UPPER(?1) || '%')
 			  AND ?2 in ('', author)
 			  AND ?3 in ('', category)
-			  AND price <= ?4
+			  AND ?4 in ('', title)
+			  AND price <= ?5
 			 
 			  """)
 
-	public List<Product> findProducts(String text, String author, String category, double maxPrice);
+	public List<Product> findProducts(String title, String author, String category, double maxPrice);
 
 	@Query("SELECT DISTINCT author FROM Product p")
 	public List<String> allAuthor();
@@ -40,8 +41,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 			FROM Buy b
 			WHERE b.product = ?1
 			""")
-//			AND r.start <= ?3
-//			AND r.end >= ?2
+
 			
 
 	public boolean getProductAvailability(Product product);

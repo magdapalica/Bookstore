@@ -18,7 +18,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <body>
 <jsp:include page="headerBar.jsp"/>
 <div class="w3-display-container w3-content" style="max-width:1500px;">
-<div class="w3-center w3-purple">
+<div class="w3-center">
 	<h3>Log in to BookStorage</h3>
 </div>
 	<form action="/login" method="post">
@@ -31,8 +31,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 			<input class="w3-input w3-border w3-center" type="password" name="password" placeholder="Password" style="width:300px; margin:auto">		
 		</div>
 		<div class="w3-center" style="margin-top: 15px">
-		<a href="/" class="w3-bar-item w3-button w3-blue w3-mobile w3-margin-left"><i class="home"> </i>Home</a>
-		<input class="w3-bar-item w3-button w3-blue w3-mobile" type="submit" value="Log in" style="margin:auto">
+		<a href="/" class="w3-bar-item w3-button w3-khaki w3-mobile w3-margin-left"><i class="home"> </i>Home</a>
+		<input class="w3-bar-item w3-button w3-khaki w3-mobile" type="submit" value="Log in" style="margin:auto">
 		</div>
 		
 		<!-- Remember me function -->

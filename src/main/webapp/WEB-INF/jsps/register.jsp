@@ -16,10 +16,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </style>
 <title>Register</title>
 </head>
-<body>
 <jsp:include page="headerBar.jsp"/>
-<div class="w3-center w3-purple">
-	<h3>Register to Shazar</h3>
+<body>
+<div class="w3-center" style="margin-top:80px">
+	<h3>Register to Bookstore</h3>
 	</div>
 	<div>${message}</div>
 	<form action="/register" method="post" enctype="multipart/form-data">
@@ -50,8 +50,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		</div>
 		<div><input class="w3-input w3-border w3-center" type="file" id="files" name="file" style="width:300px; margin:auto"/></div>
 		<div class="w3-center" style="margin-top: 15px">
-		<a href="/" class="w3-bar-item w3-button w3-blue w3-mobile w3-margin-left"><i class="home"> </i>Home</a>
-		<input class="w3-bar-item w3-button w3-blue w3-mobile" type="submit" value="Register">
+		<a href="/" class="w3-bar-item w3-button w3-khaki w3-mobile w3-margin-left"><i class="home"> </i>Home</a>
+		<input class="w3-bar-item w3-button w3-khaki w3-mobile" type="submit" value="Register">
 		</div>
 		
 	</form>

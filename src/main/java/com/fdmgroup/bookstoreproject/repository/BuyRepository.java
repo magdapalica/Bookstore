@@ -16,22 +16,23 @@ public interface BuyRepository extends JpaRepository<Buy, Integer> {
 
 	public Buy findById(int id);
 
-//	@Query("""
-//			SELECT CASE WHEN COUNT(*) > 0 THEN true ELSE false END
-//			FROM Buy
-//			WHERE Buyer = ?1
-//			  AND Product = ?2
-//			  
-//			""")
+	@Query("""
+			SELECT CASE WHEN COUNT(*) > 0 THEN true ELSE false END
+			FROM Buy
+			WHERE buyer = ?1
+			  AND product = ?2
+			  
+			
+			""")
 	
 //	@Query(value = "SELECT CASE WHEN COUNT(*) > 0 THEN true ELSE false END\n" +
 //			"FROM Buy\n" +
 //			"WHERE buyer = ?1\n" +
 //			"  AND product = ?2\n" +
 //			"\n", nativeQuery = true)
-//
-//	
-//	public boolean userHasBuyedProduct(User user, Product product);
+
+	
+	public boolean userHasBuyedProduct(User user, Product product);
 
 	public List<Buy> findBuyByStatus(int status);
 

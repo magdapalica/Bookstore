@@ -29,34 +29,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		);
 	}
  
-	function onPageLoaded() {
-		document.getElementById('start-date').valueAsDate = new Date();
-		document.getElementById('end-date').valueAsDate = new Date();
-		searchForProdcuts();		
-	}
 	
-	function onStartDateChanged() {
-		const start = document.getElementById("start-date");
-		const end = document.getElementById("end-date");
-		if (start.value > end.value) {
-			end.value = start.value;
-		}
-		searchForProdcuts();
-	}
-
-	function onEndDateChanged() {
-		const start = document.getElementById("start-date");
-		const end = document.getElementById("end-date");
-		if (end.value < start.value) {
-			start.value = end.value;
-		}
-		searchForProdcuts();
-	}
-
 </script>
 <title>BookStorage</title>
 </head>
-<body class="w3-white" onload="onPageLoaded()">
+<body onload="searchForProdcuts()">
 
 <!-- Navigation Upper bar -->
 <div class="w3-display-container w3-content" style="max-width:1500px;">
@@ -66,13 +43,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </div>
 <jsp:include page="headerBar.jsp"/>
 
-	<div class="w3-center w3-purple">
+	<div class="w3-center">
 		<h1>Bookstore</h1>
 	</div>
 	
 	<div class="w3-center" style="margin:15px 25% 15px; width:50%;" >
 	<input class="w3-input w3-border" id="search" type="text" placeholder="Search for anything ..." autofocus oninput="searchForProdcuts()"/>
-	</div>
 	<div class="w3-center" id="filters">
 		
 		<label for="title-select">Title:</label>

@@ -34,7 +34,7 @@ body, h1, h2, h3, h4, h5, h6 {
 	<div class="w3-display-container w3-content" style="max-width: 1500px;">
 	<jsp:include page="headerBar.jsp"/>
 		<div class="w3-bar w3-white w3-large">
-			<h3 style="font-family: Helvetica" class="w3-center w3-purple">${product.title}</h3>
+			<h3 style="font-family: Helvetica" class="w3-center">${product.title}</h3>
 			
 			<p>${product.description}</p>
 

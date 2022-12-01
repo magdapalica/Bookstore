@@ -33,5 +33,13 @@ public class ProductRatingController {
 		service.rateProduct(new ProductRating(product, rating, author));
 		return "redirect:/products/" + productId;
 	}
+	
+//	@RequestMapping(value = "/top10")
+//	public List<Product> getTop10 (ModelMap model) {
+//		model.addAttribute("Top10", productService.getTop10)
+//		productService.getTop10()
+//		return "top10"
+//		
+//	}
 
 }

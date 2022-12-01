@@ -22,9 +22,9 @@ public class BuyService {
 		repo.save(buy);
 	}
 
-//	public boolean userHasBuyedProduct(User user, Product product) {
-//		return repo.userHasBuyedProduct(user, product);
-//	}
+	public boolean userHasBuyedProduct(User user, Product product) {
+		return repo.userHasBuyedProduct(user, product);
+	}
 
 	public List<Buy> findRequestedBuyForUser(User owner) {
 		return filterBuyByOwner(repo.findBuyByStatus(0), owner);

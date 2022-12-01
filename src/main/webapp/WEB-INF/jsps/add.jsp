@@ -18,7 +18,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <div class="w3-display-container w3-content" style="max-width:1500px;">
 
 <jsp:include page="headerBar.jsp"/>
-	<div class="w3-center w3-purple">
+	<div class="w3-center">
 	<h2>BookStorage</h2>
 	</div>
 	<div class="w3-center">
@@ -42,9 +42,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </body>
 <!-- Bottom navigation taskbar-->
 <div class="nav-bar w3-white w3-large w3-center">
-  <a href="/" class="w3-bar-item w3-button w3-blue w3-mobile w3-margin-left"><i class="home"> </i>Home</a>
-  <a href="#personal" class="w3-bar-item w3-button w3-blue w3-mobile">Personal</a>
-  <a href="#information" class="w3-bar-item w3-button w3-blue w3-mobile">Top10</a>
-   <a href="#cart" class="w3-bar-item w3-button w3-blue w3-mobile">Cart</a>
+  <a href="/" class="w3-bar-item w3-button w3-khaki w3-mobile w3-margin-left"><i class="home"> </i>Home</a>
+ 
 </div>
 </html>

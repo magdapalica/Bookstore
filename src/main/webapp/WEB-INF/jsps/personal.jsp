@@ -28,12 +28,12 @@ body, h1, h2, h3, h4, h5, h6 {
 <div class="w3-bar w3-white w3-large">
 
 
-<a class="w3-bar-item w3-button w3-blue w3-mobile w3-right" href="/logout">Logout</a>
+<a class="w3-bar-item w3-button w3-lime w3-mobile w3-right" href="/logout">Logout</a>
 
 </div>
 	
 		<div class="w3-bar w3-white w3-large">
-			<h2 class="w3-center w3-purple">Welcome ${user.getUsername()}</h2>
+			<h2 class="w3-center w3-khaki">Welcome ${user.getUsername()}</h2>
 			<img src="/profile-pictures/${user.getPictures().getName()}" alt="">
 			<h3 class="w3-center">Your Personal Information</h3>
 			
@@ -54,7 +54,7 @@ body, h1, h2, h3, h4, h5, h6 {
 
 				<form class="w3-center" method="POST" action="/personal">
 
-
+				<div class="w3-center">
 					<input type="hidden" name="username" readonly="readonly"
 						value="${user.getUsername()}" /> <label> First Name:</label> <input
 						type="text" name="firstName" value="${user.getFirstName()}" /> <label>
@@ -64,9 +64,9 @@ body, h1, h2, h3, h4, h5, h6 {
 						Number:</label> <input type="text" name="number"
 						value="${user.getNumber()}" /> 
 						<input type="submit"
-						class="w3-bar-item w3-button w3-blue w3-mobile" value="Update" style="margin-left:47%; margin-top:25px"/>
+						class="w3-bar-item w3-button w3-lime w3-mobile" value="Update" style="margin-left:47%; margin-top:25px"/>
 						
-						
+				</div>		
 						
 				</form>
 

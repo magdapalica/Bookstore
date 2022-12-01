@@ -41,11 +41,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </div>
 <jsp:include page="headerBar.jsp"/>
 
-	<div class="w3-center w3-purple">
+	<div class="w3-center">
 		<h1>My Products</h1>
 	</div>
 
-	<div class="w3-center w3-purple">
+	<div class="w3-center w3-khaki">
 		<h2>Awaiting Confirmation</h2>
 	</div>
 	<table style="margin:auto">
@@ -76,15 +76,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 			</tr>
 		</c:forEach>
 	</table>
-
+<!--
 	 <div class="w3-center w3-purple">
 		<h2>Awaiting Return</h2>
 	</div>
-	<!--  
+  
 	<table style="margin:auto">
 		<tr style="font-size:18px">
 			<th>Product</th>
-			<th>Start</th>
+		<th>Start</th>
 			<th>End</th>
 			<th></th>
 			<th></th>
@@ -92,8 +92,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		<c:forEach items="${confirmedBuy}" var="buy">
 			<tr>
 				<td>${buy.product.title}</td>
-				<td>${buy.start}</td>
-				<td>${buy.end}</td>
+			<!--<td>${buy.start}</td>
+				<td>${buy.end}</td> -->
 				<td><a href="/products/${buy.product.id}">Details</a></td>
 				<!--  
 				<td>
@@ -106,8 +106,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 			</tr>
 		</c:forEach>
 	</table>
-</div>
 
-<jsp:include page="homeBar.jsp"/>
+
+  <a href="/" class="w3-bar-item w3-button w3-khaki w3-mobile w3-center" style="margin-top:30px; margin-left:700px"><i class="home"> </i> Add Products</a>
+  </div>
 </body>
 </html>

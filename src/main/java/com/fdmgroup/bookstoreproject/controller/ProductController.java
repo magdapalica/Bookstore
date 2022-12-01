@@ -125,9 +125,9 @@ public class ProductController {
 		Product product = service.findProductbyId(id);
 		model.addAttribute("product", product);
 
-//		User user = userService.getCurrentUser(authentication);
-//		boolean userHasBuyedProduct = buyService.userHasBuyedProduct(user, product);
-//		model.addAttribute("userHasBuyedProduct", userHasBuyedProduct);
+		User user = userService.getCurrentUser(authentication);
+		boolean userHasBuyedProduct = buyService.userHasBuyedProduct(user, product);
+		model.addAttribute("userHasBuyedProduct", userHasBuyedProduct);
 
 		List<ProductRating> productRatings = productRatingService.findProductRatings(product);
 		double productRating = productRatings.stream().mapToDouble(r -> r.getRating()).average().orElse(0);

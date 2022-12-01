@@ -18,7 +18,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <body>
 <jsp:include page="headerBar.jsp"/>
 <div class="w3-display-container w3-content" style="max-width:1500px;">
-<div class="w3-center w3-purple">
+<div class="w3-center">
 	<h3>Reset Password</h3>
 </div>
 	<form action="/passwordreset" method="post">
