@@ -103,15 +103,5 @@ public class BuyControllerTest {
 		.andExpect(view().name("redirect:/ownProducts"));
 	}
 	
-//	@Test
-//	@WithMockUser
-//	public void test_confirmReturn() throws Exception {
-//		Buy rent = mockRentService.findRentById(100);
-//		Mockito.doNothing().when(mockRentService).confirmReturn(rent);
-//		mockMvc.perform(post("/confirmReturn")
-//		.param("rentId", "100"))
-//		.andExpect(status().isFound())
-//		.andExpect(view().name("redirect:/ownProducts"));
-//	}
-	
+
 }

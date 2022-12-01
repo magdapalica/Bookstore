@@ -108,7 +108,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 	</table>
 
 
-  <a href="/" class="w3-bar-item w3-button w3-khaki w3-mobile w3-center" style="margin-top:30px; margin-left:700px"><i class="home"> </i> Add Products</a>
+  <a href="/" class="w3-bar-item w3-button w3-khaki w3-mobile w3-center" style="margin-top:30px; margin-left:700px"><i class="home"> </i> Add More Products</a>
   </div>
 </body>
 </html>

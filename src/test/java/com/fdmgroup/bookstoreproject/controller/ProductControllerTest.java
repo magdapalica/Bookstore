@@ -141,7 +141,7 @@ public class ProductControllerTest {
 		.andExpect(model().attribute("product", expectedProduct))
 		.andExpect(model().attribute("productRating", productRating))
 		.andExpect(model().attribute("productVotes", productRatings.size()))
-		.andExpect(model().attribute("userHasRentedProduct", true));
+		.andExpect(model().attribute("userHasBuyedProduct", true));
 		
 		
 	}

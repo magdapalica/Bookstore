@@ -60,11 +60,5 @@ public class ProfileControllerTest {
 		.andExpect(model().attribute("user", user));
 	}
 
-
-	
-	
-	
-	
-	
 	
 }

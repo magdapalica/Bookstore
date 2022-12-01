@@ -135,9 +135,9 @@ public class ProductController {
 		model.addAttribute("productVotes", productRatings.size());
 
 //		List<LenderRating> lenderRatings = lenderRatingService.findLenderRatings(product.getOwner());
-//		double lenderRating = lenderRatings.stream().mapToDouble(r -> r.getRating()).average().orElse(0);
+////	double lenderRating = lenderRatings.stream().mapToDouble(r -> r.getRating()).average().orElse(0);
 //		model.addAttribute("lenderRating", lenderRating);
-//		model.addAttribute("lenderVotes", lenderRatings.size());
+////	model.addAttribute("lenderVotes", lenderRatings.size());
 
 		buyController.setNotificationCount(model, authentication);
 

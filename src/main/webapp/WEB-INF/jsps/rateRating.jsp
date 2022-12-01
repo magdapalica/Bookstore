@@ -4,7 +4,7 @@
 
  
 <c:choose>
-	<c:when test="${userHasRentedProduct}">
+	<c:when test="${userHasBuyedProduct}">
 		<form action="/rateLender" method="post">
 			<input type="hidden" name="productId" value="${product.id}"/>
 			<input type="number" name="rating" min="1" max="5" value="5">

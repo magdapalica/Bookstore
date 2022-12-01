@@ -65,12 +65,12 @@ public class BuyController {
 		return "redirect:/ownProducts";
 	}
 
-	@PostMapping("/confirmReturn")
-	public String confirmReturn(@RequestParam String buyId) {
-		Buy buy = buyService.findBuyById(Integer.parseInt(buyId));
-		buyService.confirmReturn(buy);
-		return "redirect:/ownProducts";
-	}
+//	@PostMapping("/confirmReturn")
+//	public String confirmReturn(@RequestParam String buyId) {
+//		Buy buy = buyService.findBuyById(Integer.parseInt(buyId));
+//		buyService.confirmReturn(buy);
+//		return "redirect:/ownProducts";
+//	}
 
 	public void setNotificationCount(ModelMap model, Authentication authenticaton) {
 		if (authenticaton != null) {

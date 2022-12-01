@@ -134,19 +134,6 @@ public class ProductServiceTest {
 		Assertions.assertEquals(allCategories, stringList);
 	}
 
-//	@Test
-//	public void test_getProductAvailability() {
-//		Product product = new Product();
-//		Mockito.doReturn(true).when(mockProductRepository).getProductAvailability(product, Date.valueOf("2022-11-22"),
-//				Date.valueOf("2022-11-23"));
-//		boolean productAvailability = productService.getProductAvailability(product, Date.valueOf("2022-11-22"),
-//				Date.valueOf("2022-11-23"));
-//
-//		verify(mockProductRepository).getProductAvailability(product, Date.valueOf("2022-11-22"),
-//				Date.valueOf("2022-11-23"));
-//
-//		Assertions.assertEquals(true, productAvailability);
-//	}
 
 	@Test
 	public void test_findByOwner() {

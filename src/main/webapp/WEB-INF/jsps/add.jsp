@@ -23,16 +23,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 	</div>
 	<div class="w3-center">
 	<form action="/add" method="post" enctype="multipart/form-data">
-		<input type="text" name="category" placeholder="Category"/>
-		<input type="text" name="description" placeholder="Description"/>
-		<input type="text" name="author" placeholder="Author"/>
-		<input type="text" name="title" placeholder="Title"/>
-		<input type="number" name="price" min=0 step=0.01 placeholder="Price"/>
+		<p><input type="text" name="category" placeholder="Category"/></p>
+		<p><input type="text" name="description" placeholder="Description"/></p>
+		<p><input type="text" name="author" placeholder="Author"/></p>
+		<p><input type="text" name="title" placeholder="Title"/></p>
+		<p><input type="number" name="price" min=0 step=0.01 placeholder="Price"/></p>
+		<p style="margin-left:130px"><input type="file" id="files" name="file"/><p>
+	<!--  	<div><input type="file" id="files" name="file"/></div>
 		<div><input type="file" id="files" name="file"/></div>
-		<div><input type="file" id="files" name="file"/></div>
-		<div><input type="file" id="files" name="file"/></div>
-		<div><input type="file" id="files" name="file"/></div>
-		<input type="submit" value="Create a new product"/>
+		<div><input type="file" id="files" name="file"/></div>  -->
+		<p><input class="w3-bar-item w3-button w3-khaki w3-mobile" type="submit" value="Create Product"/> </p>
 	</form>
 	</div>
 	<div id="productList">

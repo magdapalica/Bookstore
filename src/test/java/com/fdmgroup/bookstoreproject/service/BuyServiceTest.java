@@ -108,16 +108,6 @@ public class BuyServiceTest {
 		Assertions.assertEquals(1, value.getStatus());
 	}
 	
-//	@Test
-//	
-//	public void test_confirmReturn() {
-//		Mockito.doReturn(null).when(mockRentRepository).save(Mockito.any());
-//		rentService.confirmReturn(new Rent());
-//		verify(mockRentRepository).save(rentArgumentCaptor.capture());
-//		Rent value = rentArgumentCaptor.getValue();
-//		Assertions.assertEquals(2, value.getStatus());
-//	}
-	
 	
 	@Test
 	public void test_findRequestedBuyForUser() {
