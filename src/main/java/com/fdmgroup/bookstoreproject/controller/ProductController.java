@@ -26,7 +26,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fdmgroup.bookstoreproject.exception.ProductNotFoundException;
-import com.fdmgroup.bookstoreproject.model.LenderRating;
 import com.fdmgroup.bookstoreproject.model.Picture;
 import com.fdmgroup.bookstoreproject.model.Product;
 import com.fdmgroup.bookstoreproject.model.ProductRating;
@@ -35,7 +34,7 @@ import com.fdmgroup.bookstoreproject.security.DefaultUserDetailsService;
 import com.fdmgroup.bookstoreproject.service.ProductRatingService;
 import com.fdmgroup.bookstoreproject.service.ProductService;
 import com.fdmgroup.bookstoreproject.service.BuyService;
-import com.fdmgroup.bookstoreproject.service.LenderRatingService;
+
 
 
 @Controller
@@ -64,11 +63,11 @@ public class ProductController {
 
 	@RequestMapping(value = "/productList")
 	public String productList(ModelMap model, @RequestParam String search, @RequestParam String author,
-			@RequestParam String category, @RequestParam String maxPrice) throws ParseException {
+			@RequestParam String category, @RequestParam String maxPrice, @RequestParam String title) throws ParseException {
 //		Date start = Time.htmlToSqlDate(startDate);
 //		Date end = Time.htmlToSqlDate(endDate);
 		double price = Double.parseDouble(maxPrice);
-		List<Product> products = service.findProducts(search, author, category, price);
+		List<Product> products = service.findProducts(title, author, category, price);
 		model.addAttribute("products", products);
 		return "productList";
 	}
@@ -165,6 +164,7 @@ public class ProductController {
 		model.addAttribute("products", service.findAllProducts());
 		model.addAttribute("authors", service.allAuthor());
 		model.addAttribute("categories", service.allCategories());
+		model.addAttribute("titles", service.allTitles());
 		buyController.setNotificationCount(model, authentication);
 	}
 

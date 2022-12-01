@@ -28,7 +28,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 			}
 		);
 	}
-<!-- 
+ 
 	function onPageLoaded() {
 		document.getElementById('start-date').valueAsDate = new Date();
 		document.getElementById('end-date').valueAsDate = new Date();
@@ -52,7 +52,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		}
 		searchForProdcuts();
 	}
-	-->
+
 </script>
 <title>BookStorage</title>
 </head>

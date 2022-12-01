@@ -58,7 +58,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		</tr>
 		<c:forEach items="${requestedBuy}" var="buy">
 			<tr>
-				<td>${buy.product.type}</td>
+				<td>${buy.product.title}</td>
 		
 				<td><a href="/products/${buy.product.id}">Details</a></td>
 				<td>
@@ -91,7 +91,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		</tr> -->
 		<c:forEach items="${confirmedBuy}" var="buy">
 			<tr>
-				<td>${buy.product.type}</td>
+				<td>${buy.product.title}</td>
 				<td>${buy.start}</td>
 				<td>${buy.end}</td>
 				<td><a href="/products/${buy.product.id}">Details</a></td>
