@@ -35,10 +35,10 @@ body, h1, h2, h3, h4, h5, h6 {
 	<jsp:include page="headerBar.jsp"/>
 		<div class="w3-bar w3-white w3-large">
 			<h3 style="font-family: Helvetica" class="w3-center">${product.title}</h3>
-			
-			<p>${product.description}</p>
+			<div class= "w3-center">
+			<p>${product.description}</p> </div>
 
-			<div>
+			<div class= "w3-center">
 				<c:forEach items="${product.getPictures()}" var="picture">
 					<img src="/product-pictures/${picture.getName()}" alt="">
 				</c:forEach>

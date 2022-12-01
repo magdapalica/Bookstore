@@ -1,4 +1,4 @@
-package com.fdmgroup.shazar.controller;
+package com.fdmgroup.bookstoreproject.controller;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -20,9 +20,9 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.fdmgroup.shazar.App;
-import com.fdmgroup.shazar.model.User;
-import com.fdmgroup.shazar.service.UserService;
+import com.fdmgroup.bookstoreproject.App;
+import com.fdmgroup.bookstoreproject.model.User;
+import com.fdmgroup.bookstoreproject.service.UserService;
 
 @SpringBootTest
 @AutoConfigureMockMvc

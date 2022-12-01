@@ -48,7 +48,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 	</div>
 	
 	<div class="w3-center" style="margin:15px 25% 15px; width:50%;" >
-	<input class="w3-input w3-border" id="search" type="text" placeholder="Search for anything ..." autofocus oninput="searchForProdcuts()"/>
+	<input class="w3-input w3-border" style="margin-bottom:15px" id="search" type="text" placeholder="Search for anything ..." autofocus oninput="searchForProdcuts()"/>
+	</div>
 	<div class="w3-center" id="filters">
 		
 		<label for="title-select">Title:</label>
@@ -85,7 +86,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		  	max="9999"
 		  	oninput="searchForProdcuts()"
 		  >
-		  
+		
 	
 		  
 	<div id="productList">
@@ -95,6 +96,5 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </div>
 </div>
 
-<jsp:include page="homeBar.jsp"/>
 </body>
 </html>

@@ -28,12 +28,12 @@ body, h1, h2, h3, h4, h5, h6 {
 <div class="w3-bar w3-white w3-large">
 
 
-<a class="w3-bar-item w3-button w3-lime w3-mobile w3-right" href="/logout">Logout</a>
+<a class="w3-bar-item w3-button w3-lime w3-mobile w3-right" style="margin-top:15px" href="/logout">Logout</a>
 
 </div>
 	
-		<div class="w3-bar w3-white w3-large">
-			<h2 class="w3-center w3-khaki">Welcome ${user.getUsername()}</h2>
+		<div class="w3-bar w3-center w3-white w3-large">
+			<h2 class="w3-center ">Welcome ${user.getUsername()}</h2>
 			<img src="/profile-pictures/${user.getPictures().getName()}" alt="">
 			<h3 class="w3-center">Your Personal Information</h3>
 			
@@ -64,7 +64,7 @@ body, h1, h2, h3, h4, h5, h6 {
 						Number:</label> <input type="text" name="number"
 						value="${user.getNumber()}" /> 
 						<input type="submit"
-						class="w3-bar-item w3-button w3-lime w3-mobile" value="Update" style="margin-left:47%; margin-top:25px"/>
+						class="w3-bar-item w3-button w3-khaki w3-mobile" value="Update" style="margin-left:47%; margin-top:25px"/>
 						
 				</div>		
 						

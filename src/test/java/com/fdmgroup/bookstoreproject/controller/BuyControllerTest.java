@@ -1,4 +1,4 @@
-package com.fdmgroup.shazar.controller;
+package com.fdmgroup.bookstoreproject.controller;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -24,21 +24,21 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.fdmgroup.shazar.App;
-import com.fdmgroup.shazar.exception.ProductNotFoundException;
-import com.fdmgroup.shazar.model.Product;
-import com.fdmgroup.shazar.model.Rent;
-import com.fdmgroup.shazar.model.User;
-import com.fdmgroup.shazar.security.DefaultUserDetailsService;
-import com.fdmgroup.shazar.service.ProductService;
-import com.fdmgroup.shazar.service.RentService;
-import com.fdmgroup.shazar.service.UserService;
-import com.fdmgroup.shazar.utils.Time;
+import com.fdmgroup.bookstoreproject.App;
+import com.fdmgroup.bookstoreproject.exception.ProductNotFoundException;
+import com.fdmgroup.bookstoreproject.model.Product;
+import com.fdmgroup.bookstoreproject.model.Buy;
+import com.fdmgroup.bookstoreproject.model.User;
+import com.fdmgroup.bookstoreproject.security.DefaultUserDetailsService;
+import com.fdmgroup.bookstoreproject.service.ProductService;
+import com.fdmgroup.bookstoreproject.service.BuyService;
+import com.fdmgroup.bookstoreproject.service.UserService;
+
 
 @SpringBootTest
 @AutoConfigureMockMvc
 @ContextConfiguration(classes = App.class)
-public class RentControllerTest {
+public class BuyControllerTest {
 
 	@Autowired
 	MockMvc mockMvc;
@@ -46,19 +46,19 @@ public class RentControllerTest {
 	@MockBean
 	DefaultUserDetailsService mockUserService;
 	@MockBean
-	RentService mockRentService;
+	BuyService mockBuyService;
 	@MockBean
 	ProductService mockProductService;
 	
 	@Test
 	@WithMockUser
-	public void test_rentProduct() throws Exception {
-	User renter = mockUserService.getCurrentUser(Mockito.any(Authentication.class));
-	Mockito.doReturn(renter).when(mockUserService).getCurrentUser(Mockito.any(Authentication.class));
+	public void test_buyProduct() throws Exception {
+	User buyer = mockUserService.getCurrentUser(Mockito.any(Authentication.class));
+	Mockito.doReturn(buyer).when(mockUserService).getCurrentUser(Mockito.any(Authentication.class));
 	Product product = mockProductService.findProductbyId(200);
 	Mockito.doReturn(product).when(mockProductService).findProductbyId(200);
-	Mockito.doNothing().when(mockRentService).createNewRent(new Rent());
-	mockMvc.perform(get("/rentProduct")
+	Mockito.doNothing().when(mockBuyService).createNewBuy(new Buy());
+	mockMvc.perform(get("/buyProduct")
 	 .param("productId", "200")
 	 .param("startDate", "2022-11-22")
 	 .param("endDate", "2022-11-23"))
@@ -71,22 +71,22 @@ public class RentControllerTest {
 	@WithMockUser
 	public void test_ownProducts() throws Exception {
 		User owner = mockUserService.getCurrentUser(Mockito.any(Authentication.class));
-		List<Rent> requestedRents = mockRentService.findRequestedRentsForUser(owner);
+		List<Buy> requestedBuy = mockBuyService.findRequestedBuyForUser(owner);
 		Mockito.doReturn(owner).when(mockUserService).getCurrentUser(Mockito.any(Authentication.class));
-		Mockito.doReturn(requestedRents).when(mockRentService).findRequestedRentsForUser(owner);
+		Mockito.doReturn(requestedBuy).when(mockBuyService).findRequestedBuyForUser(owner);
 		mockMvc.perform(get("/ownProducts"))
 		.andExpect(status().isOk())
 		.andExpect(view().name("/ownProducts"))
-		.andExpect(model().attribute("requestedRents", requestedRents));
+		.andExpect(model().attribute("requestedBuy", requestedBuy));
 	}
 	
 	@Test
 	@WithMockUser
-	public void test_rejectRent() throws Exception {
-		Rent rent = mockRentService.findRentById(100);
-		Mockito.doNothing().when(mockRentService).rejectRent(rent);
-		mockMvc.perform(post("/rejectRent")
-		.param("rentId", "100"))
+	public void test_rejectBuy() throws Exception {
+		Buy buy = mockBuyService.findBuyById(100);
+		Mockito.doNothing().when(mockBuyService).rejectBuy(buy);
+		mockMvc.perform(post("/rejectBuy")
+		.param("buyId", "100"))
 		.andExpect(status().isFound())
 		.andExpect(view().name("redirect:/ownProducts"));
 	}
@@ -94,24 +94,24 @@ public class RentControllerTest {
 	
 	@Test
 	@WithMockUser
-	public void test_confirmRent() throws Exception {
-		Rent rent = mockRentService.findRentById(100);
-		Mockito.doNothing().when(mockRentService).confirmRent(rent);
-		mockMvc.perform(post("/confirmRent")
-		.param("rentId", "100"))
+	public void test_confirmBuy() throws Exception {
+		Buy buy = mockBuyService.findBuyById(100);
+		Mockito.doNothing().when(mockBuyService).confirmBuy(buy);
+		mockMvc.perform(post("/confirmBuy")
+		.param("buyId", "100"))
 		.andExpect(status().isFound())
 		.andExpect(view().name("redirect:/ownProducts"));
 	}
 	
-	@Test
-	@WithMockUser
-	public void test_confirmReturn() throws Exception {
-		Rent rent = mockRentService.findRentById(100);
-		Mockito.doNothing().when(mockRentService).confirmReturn(rent);
-		mockMvc.perform(post("/confirmReturn")
-		.param("rentId", "100"))
-		.andExpect(status().isFound())
-		.andExpect(view().name("redirect:/ownProducts"));
-	}
+//	@Test
+//	@WithMockUser
+//	public void test_confirmReturn() throws Exception {
+//		Buy rent = mockRentService.findRentById(100);
+//		Mockito.doNothing().when(mockRentService).confirmReturn(rent);
+//		mockMvc.perform(post("/confirmReturn")
+//		.param("rentId", "100"))
+//		.andExpect(status().isFound())
+//		.andExpect(view().name("redirect:/ownProducts"));
+//	}
 	
 }

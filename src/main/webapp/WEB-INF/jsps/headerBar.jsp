@@ -46,7 +46,8 @@
     <security:authorize access="not isAuthenticated()">
 	    <a href="/login" class="w3-bar-item w3-button w3-lime w3-mobile" style="margin-right:5px; float:right">Login</a>
     </security:authorize>
-  <a href="/categories" class="w3-bar-item w3-button w3-lime w3-mobile " style="margin-right:5px; float:right">Top10</a>
+  <a href="/add" class="w3-bar-item w3-button w3-lime w3-mobile " style="margin-right:5px; float:right">Products</a>
+  <a href="/top10" class="w3-bar-item w3-button w3-lime w3-mobile " style="margin-right:5px; float:right">Top10</a>
   <a href="/personal" class="w3-bar-item w3-button w3-lime  w3-mobile" style="margin-right:5px; float:right">Personal</a>
 </div>
   </div>

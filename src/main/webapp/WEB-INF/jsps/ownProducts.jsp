@@ -45,8 +45,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		<h1>My Products</h1>
 	</div>
 
-	<div class="w3-center w3-khaki">
-		<h2>Awaiting Confirmation</h2>
+	<div class="w3-center ">
+		<h4>Awaiting Confirmation</h4>
 	</div>
 	<table style="margin:auto">
 		<tr style="font-size:18px">

@@ -1,4 +1,4 @@
-package com.fdmgroup.shazar.service;
+package com.fdmgroup.bookstoreproject.service;
 
 import java.util.Optional;
 
@@ -14,9 +14,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.mockito.Mockito.verify;
 
-import com.fdmgroup.shazar.model.Role;
-import com.fdmgroup.shazar.model.User;
-import com.fdmgroup.shazar.repository.UserRepository;
+import com.fdmgroup.bookstoreproject.model.Role;
+import com.fdmgroup.bookstoreproject.model.User;
+import com.fdmgroup.bookstoreproject.repository.UserRepository;
 
 @ExtendWith(MockitoExtension.class)
 @ExtendWith(SpringExtension.class)
