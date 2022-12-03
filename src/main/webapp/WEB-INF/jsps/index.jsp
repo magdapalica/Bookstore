@@ -23,7 +23,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 				"title": document.getElementById("title-select").value,
 				"category": document.getElementById("category-select").value,
 				"maxPrice": document.getElementById("max-price").value,
-				"author": document.getElementById("author").value
+				"author": document.getElementById("author-select").value
 			
 			}
 		);
@@ -68,7 +68,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 			</c:forEach>
 		</select>
 		
-		<label for="author">Author:</label>
+		
+		<label for="author-select">Author:</label>
 		 <select name="authors" id="author-select" onchange="searchForProdcuts()">
 		    <option value="">Any</option>
 			<c:forEach items="${author}" var="title">

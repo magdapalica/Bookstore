@@ -25,7 +25,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 			 
 			  """)
 
-	public List<Product> findProducts(String title, String author, String category, double maxPrice);
+	public List<Product> findProducts(String search, String title, String author, String category, double maxPrice);
 
 	@Query("SELECT DISTINCT author FROM Product p")
 	public List<String> allAuthor();

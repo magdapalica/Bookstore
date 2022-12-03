@@ -26,8 +26,8 @@ public class ProductService {
 		repo.save(product);
 	}
 
-	public List<Product> findProducts(String title, String author, String category, double maxPrice) {
-		return repo.findProducts(title, author, category, maxPrice);
+	public List<Product> findProducts(String search, String title, String author, String category, double maxPrice) {
+		return repo.findProducts(search, title, author, category, maxPrice);
 	}
 
 	public void createNewProduct(Product product) {

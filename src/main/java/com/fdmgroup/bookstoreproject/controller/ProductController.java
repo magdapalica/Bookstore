@@ -44,8 +44,6 @@ public class ProductController {
 	private ProductService service;
 	@Autowired
 	private BuyService buyService;
-//	@Autowired
-//	private LenderRatingService lenderRatingService;
 	@Autowired
 	private ProductRatingService productRatingService;
 	@Autowired
@@ -64,10 +62,8 @@ public class ProductController {
 	@RequestMapping(value = "/productList")
 	public String productList(ModelMap model, @RequestParam String search, @RequestParam String author,
 			@RequestParam String category, @RequestParam String maxPrice, @RequestParam String title) throws ParseException {
-//		Date start = Time.htmlToSqlDate(startDate);
-//		Date end = Time.htmlToSqlDate(endDate);
 		double price = Double.parseDouble(maxPrice);
-		List<Product> products = service.findProducts(title, author, category, price);
+		List<Product> products = service.findProducts(search,title, author, category, price);
 		model.addAttribute("products", products);
 		return "productList";
 	}
@@ -133,12 +129,6 @@ public class ProductController {
 		double productRating = productRatings.stream().mapToDouble(r -> r.getRating()).average().orElse(0);
 		model.addAttribute("productRating", productRating);
 		model.addAttribute("productVotes", productRatings.size());
-
-//		List<LenderRating> lenderRatings = lenderRatingService.findLenderRatings(product.getOwner());
-////	double lenderRating = lenderRatings.stream().mapToDouble(r -> r.getRating()).average().orElse(0);
-//		model.addAttribute("lenderRating", lenderRating);
-////	model.addAttribute("lenderVotes", lenderRatings.size());
-
 		buyController.setNotificationCount(model, authentication);
 
 		return "details";
@@ -171,8 +161,6 @@ public class ProductController {
 	@RequestMapping(value = "/productBooking")
 	public String productBooking(ModelMap model, @RequestParam int productId , @RequestParam String startDate,
 			@RequestParam String endDate) throws ParseException, NumberFormatException, ProductNotFoundException {
-//		Date start = Time.htmlToSqlDate(startDate);
-//		Date end = Time.htmlToSqlDate(endDate);
 		Product product = service.findProductbyId(productId);
 //		double price = (Time.getDifferenceInDays(start ,end ) + 1) * product.getPrice();
 		double price = product.getPrice();

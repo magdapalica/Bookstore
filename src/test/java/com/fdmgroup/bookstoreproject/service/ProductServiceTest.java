@@ -63,12 +63,12 @@ public class ProductServiceTest {
 	@Test
 	public void test_findProducts() {
 		List<Product> expectedProductsList = createList();
-		Mockito.doReturn(expectedProductsList).when(mockProductRepository).findProducts("title", "author", "category",
+		Mockito.doReturn(expectedProductsList).when(mockProductRepository).findProducts("search","title", "author", "category",
 				10.0);
 
-		List<Product> findProducts = productService.findProducts("title", "author", "category", 10.0);
+		List<Product> findProducts = productService.findProducts("search","title", "author", "category", 10.0);
 
-		verify(mockProductRepository).findProducts("title", "author", "category", 10D);
+		verify(mockProductRepository).findProducts("search","title", "author", "category", 10D);
 
 		Assertions.assertEquals(expectedProductsList, findProducts);
 	}
