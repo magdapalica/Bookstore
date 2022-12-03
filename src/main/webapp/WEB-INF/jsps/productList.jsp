@@ -1,13 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <table id="products" style="margin:auto">
-	<tr style="font-size:18px">
+ 	<tr style="font-size:18px"> 
 		<th>ID</th>
 		<th>Category</th>
 		<th>Description</th>
 		<th>Author</th>
 		<th>Title</th>
 		<th>Price</th>
-	</tr>
+	</tr>  
 	<c:forEach items="${products}" var="product">
 		<tr>
 			<td>${product.id}</td>

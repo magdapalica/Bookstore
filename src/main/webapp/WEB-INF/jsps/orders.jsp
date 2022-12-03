@@ -68,7 +68,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 					</form>
 				</td>
 				<td>
-					<form action="rejectBuy" method="post">
+					<form action="confirmBuy" method="post">
 						<input type="hidden" name="buyId" value="${buy.id}"/>
 						<input type="submit" value="Confirm"/>
 					</form>
@@ -76,39 +76,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 			</tr>
 		</c:forEach>
 	</table>
-<!--
-	 <div class="w3-center w3-purple">
-		<h2>Awaiting Return</h2>
-	</div>
-  
-	<table style="margin:auto">
-		<tr style="font-size:18px">
-			<th>Product</th>
-		<th>Start</th>
-			<th>End</th>
-			<th></th>
-			<th></th>
-		</tr> -->
-		<c:forEach items="${confirmedBuy}" var="buy">
-			<tr>
-				<td>${buy.product.title}</td>
-			<!--<td>${buy.start}</td>
-				<td>${buy.end}</td> -->
-				<td><a href="/products/${buy.product.id}">Details</a></td>
-				<!--  
-				<td>
-					<form action="confirmReturn" method="post">
-						<input type="hidden" name="rentId" value="${rent.id}"/>
-						<input type="submit" value="Confirm Return"/>
-					</form>
-				</td>
-				-->
-			</tr>
-		</c:forEach>
+
 	</table>
 
 
-  <a href="/" class="w3-bar-item w3-button w3-khaki w3-mobile w3-center" style="margin-top:30px; margin-left:700px"><i class="home"> </i> Add More Products</a>
+  <a href="/" class="w3-bar-item w3-button w3-khaki w3-mobile w3-center" style="margin-top:30px; margin-left:700px; border-radius: 15px"><i class="home"> </i> Add More Products</a>
   </div>
 </body>
 </html>

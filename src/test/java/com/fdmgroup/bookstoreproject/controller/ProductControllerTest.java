@@ -177,17 +177,8 @@ public class ProductControllerTest {
 //		.andExpect(status().isOk())
 //		.andExpect(model().attribute("products", expectedProductsList));
 //	}
-//	
-//	@Test
-//	@WithMockUser
-//	public void test_productBooking() throws Exception {
-//		Mockito.doReturn(expectedProduct).when(mockService).findProductbyId(100);
-//		mockMvc.perform(get("/productBooking")
-//		.param("productId", "100")
-//		.andExpect(view().name("productBooking"))
-//		.andExpect(status().isOk())
-//		.andExpect(model().attribute("price", 20.0));
-//	}
+
+
 	
 	
 }

@@ -2,11 +2,15 @@ package com.fdmgroup.bookstoreproject.repository;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.fdmgroup.bookstoreproject.model.Product;
+import com.fdmgroup.bookstoreproject.model.ProductRating;
+//import com.fdmgroup.bookstoreproject.model.Rating;
 import com.fdmgroup.bookstoreproject.model.User;
 
 @Repository
@@ -36,15 +40,18 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	@Query("SELECT DISTINCT title FROM Product p")
 	public List<String> allTitles();
 
-	@Query("""
-			SELECT CASE WHEN COUNT(r) = 0 THEN true ELSE false END
-			FROM Buy b
-			WHERE b.product = ?1
-			""")
-
-			
-
-	public boolean getProductAvailability(Product product);
+//	@Query("""
+//			SELECT CASE WHEN COUNT(r) = 0 THEN true ELSE false END
+//			FROM Buy b
+//			WHERE b.product = ?1
+//			""")
+//
+//			
+//
+//	public boolean getProductAvailability(Product product);
 
 	public List<Product> findByOwner(User owner);
+
+//	public List<Product> getTop10();
+	
 }

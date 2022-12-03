@@ -53,12 +53,11 @@ body, h1, h2, h3, h4, h5, h6 {
 				<input type="hidden" name="productId" value="${product.id}" />
 				<label for="qty">Qty: </label> 
 				<input type="number" id="amount" name="amount" value="1" oninput="onAmountChanged()">
-				<div id="productBooking"><jsp:include page="productBooking.jsp" /></div>
 				  <input type="submit" value="Buy (${price} EUR)" id="buy"/>
 			</form>
 
 		</div>
 	</div>
-	<jsp:include page="homeBar.jsp"/>
+	<jsp:include page="bottomBar.jsp"/>
 </body>
 </html>

@@ -23,4 +23,5 @@ public class ProductRatingService {
 	public List<ProductRating> findProductRatings(Product product) {
 		return repo.findByProduct(product);
 	}
+	
 }

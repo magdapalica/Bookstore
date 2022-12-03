@@ -40,37 +40,30 @@ public class BuyController {
 		return "redirect:/";
 	}
 
-	@GetMapping("/ownProducts")
-	public String ownProducts(Authentication authentication, ModelMap model) {
-		User owner = userService.getCurrentUser(authentication);
-		List<Buy> requestedBuy = buyService.findRequestedBuyForUser(owner);
+	@GetMapping("/orders")
+	public String orders(Authentication authentication, ModelMap model) {
+		User buyer = userService.getCurrentUser(authentication);
+		List<Buy> requestedBuy = buyService.findRequestedBuyForUser(buyer);
 		model.addAttribute("requestedBuy", requestedBuy);
-		List<Buy> confirmedBuy = buyService.findConfirmedBuyForUser(owner);
+		List<Buy> confirmedBuy = buyService.findConfirmedBuyForUser(buyer);
 		model.addAttribute("confirmedBuy", confirmedBuy);
 		setNotificationCount(model, authentication);
-		return "/ownProducts";
+		return "/orders";
 	}
 
 	@PostMapping("/rejectBuy")
 	public String rejectBuy(@RequestParam String buyId) {
 		Buy buy = buyService.findBuyById(Integer.parseInt(buyId));
 		buyService.rejectBuy(buy);
-		return "redirect:/ownProducts";
+		return "redirect:/orders";
 	}
 
 	@PostMapping("/confirmBuy")
 	public String confirmBuy(@RequestParam String buyId) {
 		Buy buy = buyService.findBuyById(Integer.parseInt(buyId));
 		buyService.confirmBuy(buy);
-		return "redirect:/ownProducts";
+		return "redirect:/orders";
 	}
-
-//	@PostMapping("/confirmReturn")
-//	public String confirmReturn(@RequestParam String buyId) {
-//		Buy buy = buyService.findBuyById(Integer.parseInt(buyId));
-//		buyService.confirmReturn(buy);
-//		return "redirect:/ownProducts";
-//	}
 
 	public void setNotificationCount(ModelMap model, Authentication authenticaton) {
 		if (authenticaton != null) {

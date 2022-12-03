@@ -1,5 +1,7 @@
 package com.fdmgroup.bookstoreproject.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -35,11 +37,11 @@ public class ProductRatingController {
 	}
 	
 //	@RequestMapping(value = "/top10")
-//	public List<Product> getTop10 (ModelMap model) {
-//		model.addAttribute("Top10", productService.getTop10)
-//		productService.getTop10()
-//		return "top10"
-//		
+//	public String getTop10 (ModelMap model, @RequestParam int rating) {
+//		List<ProductRating> products = service.findProductRatings();
+//		model.addAttribute("Top10", productService.getTop10());
+//		productService.getTop10();
+//		return "top10";	
 //	}
 
 }

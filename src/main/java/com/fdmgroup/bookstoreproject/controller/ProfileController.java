@@ -24,8 +24,6 @@ public class ProfileController{
 	@GetMapping("/personal")
 	public String goToProfile(ModelMap model) {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
-
-
 		model.addAttribute("user", userService.getCurrentUser(username));
 		return "personal";
 	}

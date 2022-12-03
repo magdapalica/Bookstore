@@ -55,11 +55,12 @@ public class ProductService {
 		return repo.allTitles();
 	}
 
-	public boolean getProductAvailability(Product product) {
-		return repo.getProductAvailability(product);
-	}
-
 	public List<Product> findByOwner(User owner) {
 		return repo.findByOwner(owner);
 	}
+	
+//	public List<Product> getTop10(Product product) {
+//		return repo.getTop10();
+//	}
+	
 }

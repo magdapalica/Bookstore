@@ -9,20 +9,20 @@
 //import org.springframework.ui.ModelMap;
 //import org.springframework.web.bind.annotation.GetMapping;
 //
-////import com.fdmgroup.shazar.model.LenderRating;
-//import com.fdmgroup.shazar.model.Picture;
-//import com.fdmgroup.shazar.model.Product;
-////import com.fdmgroup.shazar.model.ProductRating;
-//import com.fdmgroup.shazar.model.Rent;
-//import com.fdmgroup.shazar.model.Role;
-//import com.fdmgroup.shazar.model.User;
-//import com.fdmgroup.shazar.security.DefaultUserDetailsService;
-////import com.fdmgroup.shazar.service.LenderRatingService;
-////import com.fdmgroup.shazar.service.ProductRatingService;
-//import com.fdmgroup.shazar.service.ProductService;
-//import com.fdmgroup.shazar.service.RentService;
-//import com.fdmgroup.shazar.service.RoleService;
-//import com.fdmgroup.shazar.utils.Time;
+////import com.fdmgroup.bookstoreproject.model.LenderRating;
+//import com.fdmgroup.bookstoreproject.model.Picture;
+//import com.fdmgroup.bookstoreproject.model.Product;
+////import com.fdmgroup.bookstoreproject.model.ProductRating;
+//import com.fdmgroup.bookstoreproject.model.Rent;
+//import com.fdmgroup.bookstoreproject.model.Role;
+//import com.fdmgroup.bookstoreproject.model.User;
+//import com.fdmgroup.bookstoreproject.security.DefaultUserDetailsService;
+////import com.fdmgroup.bookstoreproject.service.LenderRatingService;
+////import com.fdmgroup.bookstoreproject.service.ProductRatingService;
+//import ccom.fdmgroup.bookstoreproject.service.ProductService;
+//import com.fdmgroup.bookstoreproject.service.RentService;
+//importcom.fdmgroup.bookstoreproject.service.RoleService;
+
 //import org.springframework.ui.ModelMap;
 //
 //@Controller
@@ -38,8 +38,7 @@
 //	private RentService rentService;
 //	@Autowired
 //	private PasswordEncoder encoder;
-//	@Autowired
-////	private LenderRatingService lenderRatingService;
+
 ////	@Autowired
 ////	private ProductRatingService productRatingService;
 //
@@ -81,9 +80,9 @@
 //		rentService.createNewRent(new Rent(bob, bicycle, Time.newSqlDate(2022, 11, 10), Time.newSqlDate(2022, 11, 10)));
 //		rentService.createNewRent(new Rent(bob, bicycle, Time.newSqlDate(2022, 11, 18), Time.newSqlDate(2022, 11, 20)));
 //
-////		lenderRatingService.rateLender(new LenderRating(alice, 5, bob));
-////		lenderRatingService.rateLender(new LenderRating(bob, 4, carl));
-////		lenderRatingService.rateLender(new LenderRating(alice, 4, carl));
+////		lenderRatingService.rateRating(new LenderRating(alice, 5, bob));
+////		lenderRatingService.rateRating(new LenderRating(bob, 4, carl));
+////		lenderRatingService.rateRating(new LenderRating(alice, 4, carl));
 ////
 ////		productRatingService.rateProduct(new ProductRating(bicycle, 5, bob));
 ////		productRatingService.rateProduct(new ProductRating(ferrari, 2, bob));

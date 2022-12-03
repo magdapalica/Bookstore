@@ -58,6 +58,10 @@ public class ProductController {
 		return "index";
 	}
 
+//	@GetMapping(value = "/top10")
+//	public String getTop10() {
+//		return "top10";
+//	}
 
 	@RequestMapping(value = "/productList")
 	public String productList(ModelMap model, @RequestParam String search, @RequestParam String author,
@@ -158,15 +162,5 @@ public class ProductController {
 		buyController.setNotificationCount(model, authentication);
 	}
 
-	@RequestMapping(value = "/productBooking")
-	public String productBooking(ModelMap model, @RequestParam int productId , @RequestParam String startDate,
-			@RequestParam String endDate) throws ParseException, NumberFormatException, ProductNotFoundException {
-		Product product = service.findProductbyId(productId);
-//		double price = (Time.getDifferenceInDays(start ,end ) + 1) * product.getPrice();
-		double price = product.getPrice();
-		boolean available = service.getProductAvailability(product);
-		model.addAttribute("available", available);
-		model.addAttribute("price", price);
-		return "productBooking";
-	}
+	
 }

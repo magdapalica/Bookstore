@@ -69,14 +69,14 @@ public class BuyControllerTest {
 	
 	@Test
 	@WithMockUser
-	public void test_ownProducts() throws Exception {
+	public void test_orders() throws Exception {
 		User owner = mockUserService.getCurrentUser(Mockito.any(Authentication.class));
 		List<Buy> requestedBuy = mockBuyService.findRequestedBuyForUser(owner);
 		Mockito.doReturn(owner).when(mockUserService).getCurrentUser(Mockito.any(Authentication.class));
 		Mockito.doReturn(requestedBuy).when(mockBuyService).findRequestedBuyForUser(owner);
-		mockMvc.perform(get("/ownProducts"))
+		mockMvc.perform(get("/orders"))
 		.andExpect(status().isOk())
-		.andExpect(view().name("/ownProducts"))
+		.andExpect(view().name("/orders"))
 		.andExpect(model().attribute("requestedBuy", requestedBuy));
 	}
 	
@@ -88,7 +88,7 @@ public class BuyControllerTest {
 		mockMvc.perform(post("/rejectBuy")
 		.param("buyId", "100"))
 		.andExpect(status().isFound())
-		.andExpect(view().name("redirect:/ownProducts"));
+		.andExpect(view().name("redirect:/orders"));
 	}
 	
 	
@@ -100,7 +100,7 @@ public class BuyControllerTest {
 		mockMvc.perform(post("/confirmBuy")
 		.param("buyId", "100"))
 		.andExpect(status().isFound())
-		.andExpect(view().name("redirect:/ownProducts"));
+		.andExpect(view().name("redirect:/orders"));
 	}
 	
 

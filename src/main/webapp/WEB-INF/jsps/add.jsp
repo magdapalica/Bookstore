@@ -19,7 +19,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 
 <jsp:include page="headerBar.jsp"/>
 	<div class="w3-center">
-	<h2>BookStorage</h2>
+	<h2>Add New Book</h2>
 	</div>
 	<div class="w3-center">
 	<form action="/add" method="post" enctype="multipart/form-data">
@@ -32,7 +32,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 	<!--  	<div><input type="file" id="files" name="file"/></div>
 		<div><input type="file" id="files" name="file"/></div>
 		<div><input type="file" id="files" name="file"/></div>  -->
-		<p><input class="w3-bar-item w3-button w3-khaki w3-mobile" type="submit" value="Create Product"/> </p>
+		<p><input class="w3-bar-item w3-button w3-khaki w3-mobile" style="border-radius: 15px" type="submit" value="Create Product"/> </p>
 	</form>
 	</div>
 	<div id="productList">
@@ -42,7 +42,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </body>
 <!-- Bottom navigation taskbar-->
 
-<jsp:include page="homeBar.jsp"/>
+<jsp:include page="bottomBar.jsp"/>
  
 </div>
 </html>

@@ -22,28 +22,28 @@ public class BuyService {
 		repo.save(buy);
 	}
 
-	public boolean userHasBuyedProduct(User user, Product product) {
-		return repo.userHasBuyedProduct(user, product);
+	public boolean userHasBuyedProduct(User buyer, Product product) {
+		return repo.userHasBuyedProduct(buyer, product);
 	}
 
-	public List<Buy> findRequestedBuyForUser(User owner) {
-		return filterBuyByOwner(repo.findBuyByStatus(0), owner);
+	public List<Buy> findRequestedBuyForUser(User buyer) {
+		return filterBuyByOwner(repo.findBuyByStatus(0), buyer);
 	}
 
-	public List<Buy> findConfirmedBuyForUser(User owner) {
-		return filterBuyByOwner(repo.findBuyByStatus(1), owner);
+	public List<Buy> findConfirmedBuyForUser(User buyer) {
+		return filterBuyByOwner(repo.findBuyByStatus(1), buyer);
 
 	}
 
-	public List<Buy> findUnfinishedBuy(User owner) {
+	public List<Buy> findUnfinishedBuy(User buyer) {
 		List<Integer> statuses = new ArrayList<>();
 		statuses.add(0);
 		statuses.add(1);
-		return filterBuyByOwner(repo.findBuyByStatusIn(statuses), owner);
+		return filterBuyByOwner(repo.findBuyByStatusIn(statuses), buyer);
 	}
 
-	private static List<Buy> filterBuyByOwner(List<Buy> buy, User owner) {
-		return buy.stream().filter(r -> r.getProduct().getOwner() == owner).collect(Collectors.toList());
+	private static List<Buy> filterBuyByOwner(List<Buy> buy, User buyer) {
+		return buy.stream().filter(r -> r.getProduct().getOwner() == buyer).collect(Collectors.toList());
 	}
 
 	public Buy findBuyById(int id) {

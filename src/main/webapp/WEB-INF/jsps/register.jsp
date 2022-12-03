@@ -50,8 +50,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		</div>
 		<div><input class="w3-input w3-border w3-center" type="file" id="files" name="file" style="width:300px; margin:auto"/></div>
 		<div class="w3-center" style="margin-top: 15px">
-		<a href="/" class="w3-bar-item w3-button w3-khaki w3-mobile w3-margin-left"><i class="home"> </i>Home</a>
-		<input class="w3-bar-item w3-button w3-khaki w3-mobile" type="submit" value="Register">
+		<a href="/" class="w3-bar-item w3-button w3-khaki w3-mobile w3-margin-left" style="border-radius: 15px"><i class="home"> </i>Home</a>
+		<input class="w3-bar-item w3-button w3-khaki w3-mobile" type="submit" style="border-radius: 15px" value="Register">
 		</div>
 		
 	</form>

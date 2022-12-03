@@ -39,14 +39,13 @@
 
     <security:authorize access="isAuthenticated()">
 	    <a href="/logout" class="w3-bar-item w3-button w3-lime" style="margin-right:5px; float:right">Logout</a>
-    	<a href="/ownProducts" id="own-products" class="w3-bar-item w3-button  w3-lime w3-mobile badge1" style="margin-right:5px; float:right" data-badge="">
+    	<a href="/orders" id="own-products" class="w3-bar-item w3-button  w3-lime w3-mobile badge1" style="margin-right:5px; float:right" data-badge="">
     		Cart
     	</a>
     </security:authorize>
     <security:authorize access="not isAuthenticated()">
 	    <a href="/login" class="w3-bar-item w3-button w3-lime w3-mobile" style="margin-right:5px; float:right">Login</a>
     </security:authorize>
-  <a href="/add" class="w3-bar-item w3-button w3-lime w3-mobile " style="margin-right:5px; float:right">Products</a>
   <a href="/top10" class="w3-bar-item w3-button w3-lime w3-mobile " style="margin-right:5px; float:right">Top10</a>
   <a href="/personal" class="w3-bar-item w3-button w3-lime  w3-mobile" style="margin-right:5px; float:right">Personal</a>
 </div>
