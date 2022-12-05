@@ -58,10 +58,10 @@ public class ProductController {
 		return "index";
 	}
 
-//	@GetMapping(value = "/top10")
-//	public String getTop10() {
-//		return "top10";
-//	}
+	@GetMapping(value = "/top10")
+	public String getTop10() {
+		return "top10";
+	}
 
 	@RequestMapping(value = "/productList")
 	public String productList(ModelMap model, @RequestParam String search, @RequestParam String author,
@@ -133,6 +133,7 @@ public class ProductController {
 		double productRating = productRatings.stream().mapToDouble(r -> r.getRating()).average().orElse(0);
 		model.addAttribute("productRating", productRating);
 		model.addAttribute("productVotes", productRatings.size());
+//		model.addAttribute("top10", productRating);
 		buyController.setNotificationCount(model, authentication);
 
 		return "details";

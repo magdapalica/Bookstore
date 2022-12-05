@@ -52,6 +52,4 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 	public List<Product> findByOwner(User owner);
 
-//	public List<Product> getTop10();
-	
 }

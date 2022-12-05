@@ -19,4 +19,6 @@ public interface ProductRatingRepository extends JpaRepository<ProductRating, In
 	@Transactional
 	public List<ProductRating> deleteByProductAndAuthor(Product product, User author);
 	
+//	public List<ProductRating> getTop10();
+	
 }

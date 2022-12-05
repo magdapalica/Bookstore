@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.fdmgroup.bookstoreproject.exception.ProductNotFoundException;
 import com.fdmgroup.bookstoreproject.model.Product;
 import com.fdmgroup.bookstoreproject.model.ProductRating;
+import com.fdmgroup.bookstoreproject.model.Top10;
 import com.fdmgroup.bookstoreproject.model.User;
 import com.fdmgroup.bookstoreproject.security.DefaultUserDetailsService;
 import com.fdmgroup.bookstoreproject.service.ProductRatingService;
@@ -35,13 +36,12 @@ public class ProductRatingController {
 		service.rateProduct(new ProductRating(product, rating, author));
 		return "redirect:/products/" + productId;
 	}
-	
+
 //	@RequestMapping(value = "/top10")
-//	public String getTop10 (ModelMap model, @RequestParam int rating) {
-//		List<ProductRating> products = service.findProductRatings();
-//		model.addAttribute("Top10", productService.getTop10());
-//		productService.getTop10();
+//	public String getTop10 (ModelMap model, @RequestParam Product product) {
+//		List<ProductRating> products = service.findProductRatings(product);
+//		model.addAttribute("top10", service.getTop10(product));
+//		service.getTop10(product);
 //		return "top10";	
 //	}
-
 }

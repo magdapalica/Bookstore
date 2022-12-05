@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.fdmgroup.bookstoreproject.exception.ProductNotFoundException;
 import com.fdmgroup.bookstoreproject.model.Product;
+import com.fdmgroup.bookstoreproject.model.ProductRating;
 import com.fdmgroup.bookstoreproject.model.User;
 import com.fdmgroup.bookstoreproject.repository.ProductRepository;
 
@@ -58,9 +59,6 @@ public class ProductService {
 	public List<Product> findByOwner(User owner) {
 		return repo.findByOwner(owner);
 	}
-	
-//	public List<Product> getTop10(Product product) {
-//		return repo.getTop10();
-//	}
+
 	
 }
