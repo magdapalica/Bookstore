@@ -22,7 +22,7 @@ public class Top10 {
 	private String author;
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@OneToOne(targetEntity = ProductRating.class)
-	private ProductRating productRatng;
+	private ProductRating productRating;
 	
 	
 	public Integer getId() {
@@ -44,14 +44,14 @@ public class Top10 {
 		this.author = author;
 	}
 	public ProductRating getProductRatng() {
-		return productRatng;
+		return productRating;
 	}
 	public void setProductRatng(ProductRating productRatng) {
-		this.productRatng = productRatng;
+		this.productRating = productRating;
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(author, id, productRatng, title);
+		return Objects.hash(author, id, productRating, title);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -63,7 +63,7 @@ public class Top10 {
 			return false;
 		Top10 other = (Top10) obj;
 		return Objects.equals(author, other.author) && Objects.equals(id, other.id)
-				&& Objects.equals(productRatng, other.productRatng) && Objects.equals(title, other.title);
+				&& Objects.equals(productRating, other.productRating) && Objects.equals(title, other.title);
 	}
 	
 	

@@ -59,7 +59,8 @@ public class ProductController {
 	}
 
 	@GetMapping(value = "/top10")
-	public String getTop10() {
+	public String getTop10(ModelMap model) {
+		model.addAttribute("products", service.findAllProducts());
 		return "top10";
 	}
 

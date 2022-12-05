@@ -24,8 +24,8 @@ public class ProductRatingService {
 		return repo.findByProduct(product);
 	}
 	
-//	public List<ProductRating> getTop10(Product product) {
-//		return repo.getTop10(product);
-//	}
+	public List<ProductRating> getTop10() {
+		return repo.findAll();
+	}
 	
 }
