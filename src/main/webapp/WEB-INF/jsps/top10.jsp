@@ -3,20 +3,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+</style>
 <title>Top10</title>
 </head>
 <body>
-<h1>Top 10 Books</h1>
+<div class="w3-display-container w3-content" style="max-width:1500px;">
+<div class="w3-center">
+<h2>Top 10 Books</h2> </div>
 
 <table id="top10" style="margin:auto">
- 	<tr style="font-size:18px"> 
+
+ 	<tr> 
 		<th>ID</th>
 		<th>Title</th>
 		<th>Author</th>
 		<th>Rating</th>
 		
-	</tr>  
+	</tr>   
 	<c:forEach items="${products}" var="product">
 		<tr>
 			<td>${product.id}</td>
@@ -27,5 +37,7 @@
 	</tr>
 	</c:forEach>
 </table>
+</div>
 </body>
+<jsp:include page="bottomBar.jsp"/>
 </html>
