@@ -25,7 +25,7 @@ public class ProductRatingService {
 	}
 	
 //	public List<ProductRating> getTop10(Product product) {
-//		return repo.getTop10();
+//		return repo.getTop10(product);
 //	}
 	
 }

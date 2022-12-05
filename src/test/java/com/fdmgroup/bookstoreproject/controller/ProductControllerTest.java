@@ -82,6 +82,15 @@ public class ProductControllerTest {
 	}
 
 	@Test
+	@WithMockUser
+	public void test_getTop10() throws Exception {
+		mockMvc.perform(get("/top10"))
+		.andExpect(status().isOk())
+		.andExpect(view().name("top10"));
+	}
+	
+	
+	@Test
 	public void test_goToHomePage() throws Exception {
 		when(mockService.findAllProducts()).thenReturn(expectedProductsList);
 		mockMvc.perform(get("/")).andExpect(status().isOk()).andExpect(view().name("index"))
