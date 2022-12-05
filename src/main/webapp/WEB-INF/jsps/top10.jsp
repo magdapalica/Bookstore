@@ -17,29 +17,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <div class="w3-display-container w3-content" style="max-width:1500px;">
 <div class="w3-center">
 <h2>Top 10 Books</h2> </div>
-	<!--
-<table id="top10" style="margin:auto">
-
- 	<tr> 
-		<th>ID</th>
-		<th>Title</th>
-		<th>Author</th>
-		<th>Rating</th>
-		
-	</tr>   
-	<c:forEach items="${products}" var="product">
-		<tr>
-			<td>${product.id}</td>
-			<td>${product.title}</td>
-			<td>${product.author}</td>
-			<td>${productRatingg.rating}</td>
-		<td><a href="/products/${product.id}">Details</a></td> 
-	</tr>
-	</c:forEach>
-</table> -->	
 <div id="productList">
-   			<jsp:include page="productRatingList.jsp"/>
-   		
+   			<jsp:include page="productRatingList.jsp"/> 		
 	</div>
 </div> 
 </body>

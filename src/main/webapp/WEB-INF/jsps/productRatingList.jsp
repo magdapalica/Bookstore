@@ -6,13 +6,12 @@
 		<th>Author</th>
 		<th>Rating</th>
 	</tr>  
-	<c:forEach items="${top10}" var="productRating">
+	<c:forEach items="${top10}" var="productRatingList">
 		<tr>
-			<td>${productRating.product.id}</td>
-			<td>${productRating.product.title}</td>
-			<td>${productRating.product.author}</td>
-			<td>${productwithrating.rating}</td>
-			<td><a href="/products/${top10.id}">Top 10</a></td>
+			<td>${productRatingList.product.id}</td>
+			<td>${productRatingList.product.title}</td>
+			<td>${productRatingList.product.author}</td>
+			<td>${productRatingList.rating}</td>
 		</tr>
 	</c:forEach>
 </table>

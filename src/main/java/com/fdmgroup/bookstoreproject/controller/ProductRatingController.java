@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fdmgroup.bookstoreproject.exception.ProductNotFoundException;
 import com.fdmgroup.bookstoreproject.model.Product;
 import com.fdmgroup.bookstoreproject.model.ProductRating;
-import com.fdmgroup.bookstoreproject.model.Top10;
 import com.fdmgroup.bookstoreproject.model.User;
 import com.fdmgroup.bookstoreproject.security.DefaultUserDetailsService;
 import com.fdmgroup.bookstoreproject.service.ProductRatingService;
@@ -37,9 +37,4 @@ public class ProductRatingController {
 		return "redirect:/products/" + productId;
 	}
 
-	@RequestMapping(value = "/top10")
-	public String getTop10 (ModelMap model) {
-		model.addAttribute("top10", service.getTop10());
-		return "top10";	
-	}
 }

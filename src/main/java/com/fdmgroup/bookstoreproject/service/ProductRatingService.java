@@ -25,7 +25,7 @@ public class ProductRatingService {
 	}
 	
 	public List<ProductRating> getTop10() {
-		return repo.findAll();
+		return repo.findTop2ByOrderByRatingDesc();
 	}
 	
 }

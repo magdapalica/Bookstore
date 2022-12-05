@@ -24,10 +24,12 @@ public interface ProductRatingRepository extends JpaRepository<ProductRating, In
 //			SELECT  * FROM PRODUCT INNER JOIN PRODUCT_RATING 
 //ON PRODUCT.PRODUCT_ID = PRODUCT_RATING .PRODUCT_PRODUCT_ID 
 //			""")
-
-//	public List<ProductRating> getTop10();
 	
 	public List<ProductRating> findAll();
+	
+	public List<ProductRating> findAllByOrderByRatingAsc();
+	
+	public List<ProductRating> findTop2ByOrderByRatingDesc();
 	
 	
 }
