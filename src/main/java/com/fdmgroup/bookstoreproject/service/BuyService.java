@@ -59,9 +59,4 @@ public class BuyService {
 		repo.save(buy);
 	}
 
-	public void confirmReturn(Buy buy) {
-		buy.setStatus(2);
-		repo.save(buy);
-	}
-
 }

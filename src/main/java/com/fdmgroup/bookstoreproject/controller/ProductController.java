@@ -68,7 +68,7 @@ public class ProductController {
 	public String productList(ModelMap model, @RequestParam String search, @RequestParam String author,
 			@RequestParam String category, @RequestParam String maxPrice, @RequestParam String title) throws ParseException {
 		double price = Double.parseDouble(maxPrice);
-		List<Product> products = service.findProducts(search,title, author, category, price);
+		List<Product> products = service.findProducts(search, author, category,title, price);
 		model.addAttribute("products", products);
 		return "productList";
 	}
@@ -87,22 +87,14 @@ public class ProductController {
 		User buyer = userService.getCurrentUser(authentication);
 		Product product = new Product(title, description, author, category, priceDouble, buyer);
 //		service.createNewProduct(product);
-
 		InputStream inputStream;
-
 		List<Picture> pictures = new ArrayList<>();
-
 		for (MultipartFile photo : file) {
 			if (!photo.getOriginalFilename().isEmpty()) {
-
 				Picture picture = new Picture(photo.getOriginalFilename());
-
 				pictures.add(picture);
-
 				Path destinationFile = Paths.get(System.getProperty("user.dir"), "src/main/webapp/product-pictures",
-
 						photo.getOriginalFilename());
-
 				try {
 					inputStream = photo.getInputStream();
 					Files.copy(inputStream, destinationFile, StandardCopyOption.REPLACE_EXISTING);
@@ -111,12 +103,9 @@ public class ProductController {
 					return "add";
 				}
 			}
-
 		}
 		product.setPictures(pictures);
-
 		service.saveProduct(product);
-
 		return "redirect:/add";
 	}
 
@@ -134,7 +123,6 @@ public class ProductController {
 		double productRating = productRatings.stream().mapToDouble(r -> r.getRating()).average().orElse(0);
 		model.addAttribute("productRating", productRating);
 		model.addAttribute("productVotes", productRatings.size());
-//		model.addAttribute("top10", productRating);
 		buyController.setNotificationCount(model, authentication);
 
 		return "details";
@@ -152,7 +140,6 @@ public class ProductController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("productNotFound");
 		mav.addObject("message", ex.getMessage());
-
 		return mav;
 	}
 

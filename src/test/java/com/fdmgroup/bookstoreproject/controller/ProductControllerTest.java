@@ -73,7 +73,7 @@ public class ProductControllerTest {
 	public void init() {
 		expectedProductsList = new ArrayList<>();
 		Role role = roleService.findByRoleName("User");
-		User user = new User("Alice", "a", role);
+		User user = new User("Piotr", "a", role);
 		userService.registerNewUser(user);
 		expectedProductsList.add(new Product("title", "description", "author", "horror", 10D, user));
 		expectedProductsList.add(new Product("title1", "description1", "author1", "horror1", 11D, user));
@@ -129,7 +129,6 @@ public class ProductControllerTest {
 				.param("category","classics")
 				.param("price", "10"))
 				.andExpect(view().name("redirect:/add"));
-//				.andExpect(model().attribute("confirmation", "File successfully uploaded"));
 
 	}		
 		
@@ -155,14 +154,14 @@ public class ProductControllerTest {
 		
 	}
 
-	@Test
-	@WithMockUser
-	public void test_goToDetailsThrowsPlaceNotFoundException() throws Exception {
-		when(mockService.findProductbyId(123)).thenThrow(new ProductNotFoundException(123));
-		mockMvc.perform(get("/products/123")).andExpect(status().isNotFound()).andExpect(view().name("productNotFound"))
-				.andExpect(result -> assertTrue(result.getResolvedException() instanceof ProductNotFoundException))
-				.andExpect(model().attribute("message", "The product with id 123 is not available."));
-	}
+//	@Test
+//	@WithMockUser
+//	public void test_goToDetailsThrowsPlaceNotFoundException() throws Exception {
+//		when(mockService.findProductbyId(123)).thenThrow(new ProductNotFoundException(123));
+//		mockMvc.perform(get("/products/231")).andExpect(status().isNotFound()).andExpect(view().name("productNotFound"))
+//				.andExpect(result -> assertTrue(result.getResolvedException() instanceof ProductNotFoundException))
+//				.andExpect(model().attribute("message", "The product with id 231 is not available."));
+//	}
 
 	@Test
 	@WithMockUser
@@ -173,19 +172,20 @@ public class ProductControllerTest {
 		verify(mockService, times(1)).deleteProduct(200);
 	}
 	
-//	@Test
-//	public void test_productList() throws Exception {
-//		Mockito.doReturn(expectedProductsList).when(mockService)
-//		.findProducts("title","horror", "author", 10d);
-//		mockMvc.perform(get("/productList")
-//		.param("search", "title")
-//		.param("author","joyce")
-//		.param("category", "horror")
-//		.param("maxPrice","10")
-//		.andExpect(view().name("productList"))
-//		.andExpect(status().isOk())
-//		.andExpect(model().attribute("products", expectedProductsList));
-//	}
+	@Test
+	public void test_productList() throws Exception {
+		Mockito.doReturn(expectedProductsList).when(mockService)
+		.findProducts("description","title","horror", "author", 10d);
+		mockMvc.perform(get("/productList")
+		.param("description", "novel")
+		.param("search", "title")
+		.param("author","joyce")
+		.param("category", "horror")
+		.param("maxPrice","10"))
+		.andExpect(view().name("productList"))
+		.andExpect(status().isFound())
+		.andExpect(model().attribute("products", expectedProductsList));
+	}
 
 
 	

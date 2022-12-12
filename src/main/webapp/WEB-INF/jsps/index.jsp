@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+body,h1,h2,h3,h4,h5,h6 {font-family: Verdana,sans-serif} 
 </style>
 <!--  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -20,10 +20,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 			"/productList",
 			{
 				"search": document.getElementById("search").value,
-				"title": document.getElementById("title-select").value,
+				"author": document.getElementById("author-select").value,
 				"category": document.getElementById("category-select").value,
-				"maxPrice": document.getElementById("max-price").value,
-				"author": document.getElementById("author-select").value
+				"title": document.getElementById("title-select").value,
+				"maxPrice": document.getElementById("maxPrice").value
 			
 			}
 		);
@@ -38,7 +38,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <!-- Navigation Upper bar -->
 <div class="w3-display-container w3-content" style="max-width:1500px;">
 
-<div class="w3-bar w3-white w3-large">
+<div class="w3-bar w3-large">
  
 </div>
 <jsp:include page="headerBar.jsp"/>
@@ -51,6 +51,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 	<input class="w3-input w3-border" style="margin-bottom:15px" id="search" type="text" placeholder="Search for anything ..." autofocus oninput="searchForProdcuts()"/>
 	</div>
 	<div class="w3-center" id="filters">
+	<h5>Filters</h5>
 		
 		<label for="title-select">Title:</label>
 		<select name="titles" id="title-select" onchange="searchForProdcuts()">
@@ -88,12 +89,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 		  	oninput="searchForProdcuts()"
 		  >
 		
-	
-		  
+	<div style="margin-top:50px">
+	  <h5> Books </h5>	
 	<div id="productList">
    		<jsp:include page="productList.jsp"/>
 	</div>
-	
+	</div>
 </div>
 </div>
 

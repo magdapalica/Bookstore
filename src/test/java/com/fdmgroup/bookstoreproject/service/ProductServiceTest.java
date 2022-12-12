@@ -40,10 +40,10 @@ public class ProductServiceTest {
 
 	private List<Product> createList() {
 		Role role = roleService.findByRoleName("User");
-		User user = new User("Alice", "a", role);
+		User user = new User("Piotr", "a", role);
 		userService.registerNewUser(user);
 		List<Product> expectedProductsList = new ArrayList<>();
-		expectedProductsList.add(new Product("title", "description", "author1", "horrol", 10D, user));
+		expectedProductsList.add(new Product("title", "description", "author1", "horror", 10D, user));
 		expectedProductsList.add(new Product("title1", "description1", "author2", "classic", 11D, user));
 		expectedProductsList.add(new Product("title2", "description2", "authoe3", "fantasy", 12D, user));
 		return expectedProductsList;
@@ -117,10 +117,10 @@ public class ProductServiceTest {
 		List<String> stringList = new ArrayList<>();
 		stringList.add("test");
 		Mockito.doReturn(stringList).when(mockProductRepository).allAuthor();
-		List<String> allColorList = productService.allAuthor();
-		allColorList.add("test");
+		List<String> allAuthorList = productService.allAuthor();
+		allAuthorList.add("test");
 		verify(mockProductRepository).allAuthor();
-		Assertions.assertEquals(allColorList, stringList);
+		Assertions.assertEquals(allAuthorList, stringList);
 	}
 
 	@Test

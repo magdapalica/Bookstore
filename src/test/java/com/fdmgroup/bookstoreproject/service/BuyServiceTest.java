@@ -35,10 +35,10 @@ public class BuyServiceTest {
 	BuyRepository mockBuyRepository;
 	
 	@Captor
-	ArgumentCaptor<Buy> rentArgumentCaptor;
+	ArgumentCaptor<Buy> buyArgumentCaptor;
 	
 	@Test
-	public void test_createNewRent() {
+	public void test_createNewBuy() {
 		Buy buy = new Buy();
 		Mockito.doReturn(null).when(mockBuyRepository).save(buy);
 		buyService.createNewBuy(buy);
@@ -82,11 +82,11 @@ public class BuyServiceTest {
 	
 	@Test
 	public void test_findBuyById() {
-		Buy rent = new Buy();
-		Mockito.doReturn(rent).when(mockBuyRepository).findById(100);
+		Buy buy = new Buy();
+		Mockito.doReturn(buy).when(mockBuyRepository).findById(100);
 		Buy buyFromService = buyService.findBuyById(100);
 		verify(mockBuyRepository).findById(100);
-		Assertions.assertEquals(rent, buyFromService);
+		Assertions.assertEquals(buy, buyFromService);
 	}
 	
 	@Test
@@ -103,8 +103,8 @@ public class BuyServiceTest {
 	public void test_confirmBuy() {
 		Mockito.doReturn(null).when(mockBuyRepository).save(Mockito.any());
 		buyService.confirmBuy(new Buy());
-		verify(mockBuyRepository).save(rentArgumentCaptor.capture());
-		Buy value = rentArgumentCaptor.getValue();
+		verify(mockBuyRepository).save(buyArgumentCaptor.capture());
+		Buy value = buyArgumentCaptor.getValue();
 		Assertions.assertEquals(1, value.getStatus());
 	}
 	

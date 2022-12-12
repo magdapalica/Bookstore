@@ -10,9 +10,7 @@
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
-body, h1, h2, h3, h4, h5, h6 {
-	font-family: "Raleway", Arial, Helvetica, sans-serif
-}
+body, h1, h2, h3, h4, h5, h6 {font-family: Verdana,sans-serif}
 </style>
 <title>${product.title}</title>
 <script

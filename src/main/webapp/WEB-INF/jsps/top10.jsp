@@ -9,15 +9,18 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+body,h1,h2,h3,h4,h5,h6 {font-family: Verdana,sans-serif}
 </style>
 <title>Top10</title>
 </head>
 <body>
 <div class="w3-display-container w3-content" style="max-width:1500px;">
+<div class="w3-bar w3-white w3-large">
+<jsp:include page="headerBar.jsp"/>
+</div>
 <div class="w3-center">
 <h2>Top 10 Books</h2> </div>
-<div id="productList">
+<div id="productRatingList">
    			<jsp:include page="productRatingList.jsp"/> 		
 	</div>
 </div> 

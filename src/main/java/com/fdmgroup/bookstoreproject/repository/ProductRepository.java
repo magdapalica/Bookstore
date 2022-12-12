@@ -29,7 +29,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 			 
 			  """)
 
-	public List<Product> findProducts(String search, String title, String author, String category, double maxPrice);
+	public List<Product> findProducts(String search, String author, String category, String title, double maxPrice);
 
 	@Query("SELECT DISTINCT author FROM Product p")
 	public List<String> allAuthor();
@@ -39,16 +39,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	
 	@Query("SELECT DISTINCT title FROM Product p")
 	public List<String> allTitles();
-
-//	@Query("""
-//			SELECT CASE WHEN COUNT(r) = 0 THEN true ELSE false END
-//			FROM Buy b
-//			WHERE b.product = ?1
-//			""")
-//
-//			
-//
-//	public boolean getProductAvailability(Product product);
 
 	public List<Product> findByOwner(User owner);
 

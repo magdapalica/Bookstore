@@ -25,11 +25,11 @@ public interface ProductRatingRepository extends JpaRepository<ProductRating, In
 //ON PRODUCT.PRODUCT_ID = PRODUCT_RATING .PRODUCT_PRODUCT_ID 
 //			""")
 	
-	public List<ProductRating> findAll();
+//	public List<ProductRating> findAll();
 	
-	public List<ProductRating> findAllByOrderByRatingAsc();
+//	public List<ProductRating> findAllByOrderByRatingDesc();
 	
-	public List<ProductRating> findTop2ByOrderByRatingDesc();
+	public List<ProductRating> findTop5ByOrderByRatingDesc();
 	
 	
 }
