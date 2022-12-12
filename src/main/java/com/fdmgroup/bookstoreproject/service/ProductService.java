@@ -27,8 +27,8 @@ public class ProductService {
 		repo.save(product);
 	}
 
-	public List<Product> findProducts(String search, String author, String category, String title, double maxPrice) {
-		return repo.findProducts(search, author, category, title, maxPrice);
+	public List<Product> findProducts(String text, String author, String category, String title, double maxPrice) {
+		return repo.findProducts(text, author, category, title, maxPrice);
 	}
 
 	public void createNewProduct(Product product) {
@@ -44,8 +44,8 @@ public class ProductService {
 		repo.deleteById(id);
 	}
 
-	public List<String> allAuthor() {
-		return repo.allAuthor();
+	public List<String> allAuthors() {
+		return repo.allAuthors();
 	}
 
 	public List<String> allCategories() {

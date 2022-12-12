@@ -4,7 +4,7 @@
 
 <c:choose>
 	<c:when test="${productVotes == 0}">
-		<span>This product has not been rated, yet.</span>
+		<span>This book are no rating yet.</span>
 	</c:when>
 	<c:when test="${productVotes == 1}">
 		<span>Product rating: ${productRating}/5 (1 vote)</span>
@@ -18,6 +18,6 @@
 	<form action="/rateProduct" method="post">
 		<input type="hidden" name="productId" value="${product.id}"/>
 		<input type="number" name="rating" min="1" max="5" value="5">
-		<input type="submit" value="Rate Product">
+		<input type="submit" value="Rate Book">
 	</form>
 </c:if>

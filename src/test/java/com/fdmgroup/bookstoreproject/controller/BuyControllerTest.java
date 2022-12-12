@@ -53,13 +53,16 @@ public class BuyControllerTest {
 	@Test
 	@WithMockUser
 	public void test_buyProduct() throws Exception {
+	//given
 	User buyer = mockUserService.getCurrentUser(Mockito.any(Authentication.class));
-	Mockito.doReturn(buyer).when(mockUserService).getCurrentUser(Mockito.any(Authentication.class));
+	Mockito.doReturn(buyer).when(mockUserService).getCurrentUser(Mockito.any(Authentication.class)); //
 	Product product = mockProductService.findProductbyId(200);
 	Mockito.doReturn(product).when(mockProductService).findProductbyId(200);
 	Mockito.doNothing().when(mockBuyService).createNewBuy(new Buy());
+	//when
 	mockMvc.perform(get("/buyProduct")
 	 .param("productId", "200"))
+	//then
 	 .andExpect(status().isFound())
 	 .andExpect(view().name("redirect:/"));
 	 
@@ -68,17 +71,14 @@ public class BuyControllerTest {
 	@Test
 	@WithMockUser
 	public void test_orders() throws Exception {
-		User owner = mockUserService.getCurrentUser(Mockito.any(Authentication.class)); //given co mam na starcie 
-		//tworze instancje klasy i używam do tego mocków
-		List<Buy> requestedBuy = mockBuyService.findRequestedBuyForUser(owner); // given
-		Mockito.doReturn(owner).when(mockUserService).getCurrentUser(Mockito.any(Authentication.class)); //when co się ma stać
+		User owner = mockUserService.getCurrentUser(Mockito.any(Authentication.class)); 
+		List<Buy> requestedBuy = mockBuyService.findRequestedBuyForUser(owner);
+		Mockito.doReturn(owner).when(mockUserService).getCurrentUser(Mockito.any(Authentication.class));
 		Mockito.doReturn(requestedBuy).when(mockBuyService).findRequestedBuyForUser(owner);
-		mockMvc.perform(get("/orders"))//  Act sekcja druga co sie dzieje
+		mockMvc.perform(get("/orders"))
 		.andExpect(status().isOk())				
 		.andExpect(view().name("/orders"))
-		.andExpect(model().attribute("requestedBuy", requestedBuy)); //then sprawdzam co sie ma stać (pierwszy wynik 
-		//w nawiasie pokazuje co się ma stać, w drugim przypisuje wynik) then ma za zadanie sprawdzić, czy rzeczywiśie to 
-		//zrealizowano, 
+		.andExpect(model().attribute("requestedBuy", requestedBuy)); 
 	}
 	
 	@Test

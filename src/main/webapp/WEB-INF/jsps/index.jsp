@@ -23,7 +23,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: Verdana,sans-serif}
 				"author": document.getElementById("author-select").value,
 				"category": document.getElementById("category-select").value,
 				"title": document.getElementById("title-select").value,
-				"maxPrice": document.getElementById("maxPrice").value
+				"maxPrice": document.getElementById("max-price").value
 			
 			}
 		);
@@ -48,18 +48,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: Verdana,sans-serif}
 	</div>
 	
 	<div class="w3-center" style="margin:15px 25% 15px; width:50%;" >
-	<input class="w3-input w3-border" style="margin-bottom:15px" id="search" type="text" placeholder="Search for anything ..." autofocus oninput="searchForProdcuts()"/>
+	<input class="w3-input w3-border" id="search" type="text" placeholder="Search for anything ..." autofocus oninput="searchForProdcuts()"/>
 	</div>
 	<div class="w3-center" id="filters">
 	<h5>Filters</h5>
-		
-		<label for="title-select">Title:</label>
-		<select name="titles" id="title-select" onchange="searchForProdcuts()">
+	
+		<label for="author-select">Author:</label>
+		 <select name="authors" id="author-select" onchange="searchForProdcuts()">
 		    <option value="">Any</option>
-			<c:forEach items="${title}" var="title">
-				<option value="${title}">${title}</option>
+			<c:forEach items="${authors}" var="author">
+				<option value="${author}">${author}</option>
 			</c:forEach>
-		</select>	
+		</select>
 		
 		<label for="category-select">Category:</label>
 		<select name="categories" id="category-select" onchange="searchForProdcuts()">
@@ -69,14 +69,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: Verdana,sans-serif}
 			</c:forEach>
 		</select>
 		
-		
-		<label for="author-select">Author:</label>
-		 <select name="authors" id="author-select" onchange="searchForProdcuts()">
+		<label for="title-select">Title:</label>
+		<select name="titles" id="title-select" onchange="searchForProdcuts()">
 		    <option value="">Any</option>
-			<c:forEach items="${author}" var="title">
-				<option value="${author}">${author}</option>
+			<c:forEach items="${titles}" var="title">
+				<option value="${title}">${title}</option>
 			</c:forEach>
-		</select>
+		</select>	
 		
 		  <label for="max-price">Maximum price:</label>
 		  <input
@@ -90,13 +89,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: Verdana,sans-serif}
 		  >
 		
 	<div style="margin-top:50px">
-	  <h5> Books </h5>	
+	  <h5> Books </h5>	</div>
 	<div id="productList">
    		<jsp:include page="productList.jsp"/>
 	</div>
 	</div>
 </div>
-</div>
+
 
 </body>
 </html>

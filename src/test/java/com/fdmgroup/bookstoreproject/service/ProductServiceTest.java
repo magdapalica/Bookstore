@@ -116,10 +116,10 @@ public class ProductServiceTest {
 	public void test_allAuthors() {
 		List<String> stringList = new ArrayList<>();
 		stringList.add("test");
-		Mockito.doReturn(stringList).when(mockProductRepository).allAuthor();
-		List<String> allAuthorList = productService.allAuthor();
+		Mockito.doReturn(stringList).when(mockProductRepository).allAuthors();
+		List<String> allAuthorList = productService.allAuthors();
 		allAuthorList.add("test");
-		verify(mockProductRepository).allAuthor();
+		verify(mockProductRepository).allAuthors();
 		Assertions.assertEquals(allAuthorList, stringList);
 	}
 

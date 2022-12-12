@@ -29,10 +29,10 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 			 
 			  """)
 
-	public List<Product> findProducts(String search, String author, String category, String title, double maxPrice);
+	public List<Product> findProducts(String text, String author, String category, String title, double maxPrice);
 
 	@Query("SELECT DISTINCT author FROM Product p")
-	public List<String> allAuthor();
+	public List<String> allAuthors();
 
 	@Query("SELECT DISTINCT category FROM Product p")
 	public List<String> allCategories();

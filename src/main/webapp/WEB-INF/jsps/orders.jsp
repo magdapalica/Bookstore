@@ -19,11 +19,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: Verdana,sans-serif}
 			"/productList",
 			{
 				"search": document.getElementById("search").value,
-				"title": document.getElementById("title-select").value,
+				"author": document.getElementById("author-select").value,
 				"category": document.getElementById("category-select").value,
-				"maxPrice": document.getElementById("max-price").value,
-				"author": document.getElementById("author").value,
-				
+				"title": document.getElementById("title-select").value,
+				"maxPrice": document.getElementById("maxPrice").value
+			
 			}
 		);
 	}

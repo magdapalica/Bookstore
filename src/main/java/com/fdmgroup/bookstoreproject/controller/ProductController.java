@@ -66,9 +66,9 @@ public class ProductController {
 
 	@RequestMapping(value = "/productList")
 	public String productList(ModelMap model, @RequestParam String search, @RequestParam String author,
-			@RequestParam String category, @RequestParam String maxPrice, @RequestParam String title) throws ParseException {
+			@RequestParam String category,@RequestParam String title, @RequestParam String maxPrice) throws ParseException {
 		double price = Double.parseDouble(maxPrice);
-		List<Product> products = service.findProducts(search, author, category,title, price);
+		List<Product> products = service.findProducts(search, author, category, title, price);
 		model.addAttribute("products", products);
 		return "productList";
 	}
@@ -145,7 +145,7 @@ public class ProductController {
 
 	private void populateModel(ModelMap model, Authentication authentication) {
 		model.addAttribute("products", service.findAllProducts());
-		model.addAttribute("authors", service.allAuthor());
+		model.addAttribute("authors", service.allAuthors());
 		model.addAttribute("categories", service.allCategories());
 		model.addAttribute("titles", service.allTitles());
 		buyController.setNotificationCount(model, authentication);
